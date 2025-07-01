@@ -2,17 +2,17 @@
 import os
 
 def get_files_info(working_directory, directory=None):
-    absolute_working_directory = os.path.abspath(working_directory)
-    absolute_directory = os.path.abspath(os.path.join(absolute_working_directory, directory))
-    if not absolute_directory.startswith(absolute_working_directory):
+    abs_working_directory = os.path.abspath(working_directory)
+    abs_directory = os.path.abspath(os.path.join(abs_working_directory, directory))
+    if not abs_directory.startswith(abs_working_directory):
         return (f'Error: Cannot list "{directory}" as it is outside the permitted working directory')
-    if not os.path.isdir(absolute_directory):
+    if not os.path.isdir(abs_directory):
         return (f'Error: "{directory}" is not a directory')
 
     full_details = []
-    items = os.listdir(absolute_directory)
+    items = os.listdir(abs_directory)
     for item in items:
-        full_path = os.path.join(absolute_directory, item)
+        full_path = os.path.join(abs_directory, item)
         size = os.path.getsize(full_path)
         if os.path.isfile(full_path):
             is_dir = False

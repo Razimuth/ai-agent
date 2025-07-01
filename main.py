@@ -46,6 +46,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-#"Why is Boot.dev such a great place to learn backend development? Use one paragraph maximum.",
-
